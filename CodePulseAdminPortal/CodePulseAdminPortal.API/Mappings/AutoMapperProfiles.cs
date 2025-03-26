@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CodePulse.API.Models.Domain;
-using CodePulse.API.Models.DTO;
+using CodePulseAdminPortal.API.Models.Domain;
+using CodePulseAdminPortal.API.Models.DTO;
 
-namespace CodePulse.API.Mappings
+namespace CodePulseAdminPortal.API.Mappings
 {
     public class AutoMapperProfiles : Profile
     {

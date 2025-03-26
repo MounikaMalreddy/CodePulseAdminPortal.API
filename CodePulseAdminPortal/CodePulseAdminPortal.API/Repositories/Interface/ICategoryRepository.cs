@@ -1,6 +1,6 @@
-﻿using CodePulse.API.Models.Domain;
+﻿using CodePulseAdminPortal.API.Models.Domain;
 
-namespace CodePulse.API.Repositories.Interface
+namespace CodePulseAdminPortal.API.Repositories.Interface
 {
     public interface ICategoryRepository
     {

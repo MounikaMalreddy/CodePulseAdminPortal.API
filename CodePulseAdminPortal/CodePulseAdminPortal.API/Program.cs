@@ -1,8 +1,9 @@
-using CodePulse.API.Data;
-using CodePulse.API.Mappings;
-using CodePulse.API.Repositories.Implementation;
-using CodePulse.API.Repositories.Interface;
+using CodePulseAdminPortal.API.Repositories.Implementation;
+using CodePulseAdminPortal.API.Data;
+using CodePulseAdminPortal.API.Mappings;
+using CodePulseAdminPortal.API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
+using CodePulseAdminPortal.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
@@ -32,6 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<GlobalErrorHandlingMiddleware>();
 
 app.UseAuthorization();
 

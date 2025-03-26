@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "CodePulse.API": {
+    "CodePulseAdminPortal.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

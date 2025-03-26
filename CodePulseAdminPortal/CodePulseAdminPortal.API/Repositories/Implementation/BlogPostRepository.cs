@@ -1,10 +1,10 @@
-﻿using CodePulse.API.Data;
-using CodePulse.API.Models.Domain;
-using CodePulse.API.Repositories.Interface;
+﻿using CodePulseAdminPortal.API.Data;
+using CodePulseAdminPortal.API.Models.Domain;
+using CodePulseAdminPortal.API.Repositories.Interface;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace CodePulse.API.Repositories.Implementation
+namespace CodePulseAdminPortal.API.Repositories.Implementation
 {
     public class BlogPostRepository : IBlogPostRepository
     {

@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
-using CodePulse.API.Models.Domain;
-using CodePulse.API.Models.DTO;
-using CodePulse.API.Repositories.Interface;
-using Microsoft.AspNetCore.Http;
+using CodePulseAdminPortal.API.Models.Domain;
+using CodePulseAdminPortal.API.Models.DTO;
+using CodePulseAdminPortal.API.Repositories.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodePulse.API.Controllers

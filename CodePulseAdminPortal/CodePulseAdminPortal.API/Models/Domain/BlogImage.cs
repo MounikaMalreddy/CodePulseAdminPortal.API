@@ -1,4 +1,4 @@
-﻿namespace CodePulse.API.Models.Domain
+﻿namespace CodePulseAdminPortal.API.Models.Domain
 {
     public class BlogImage
     {

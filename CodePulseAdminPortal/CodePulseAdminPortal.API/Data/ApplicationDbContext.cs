@@ -1,7 +1,7 @@
-﻿using CodePulse.API.Models.Domain;
+﻿using CodePulseAdminPortal.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace CodePulse.API.Data
+namespace CodePulseAdminPortal.API.Data
 {
     public class ApplicationDbContext : DbContext
     {
