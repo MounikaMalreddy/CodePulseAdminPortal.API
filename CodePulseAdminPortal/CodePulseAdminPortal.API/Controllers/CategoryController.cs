@@ -57,7 +57,7 @@ namespace CodePulseAdminPortal.API.Controllers
             //};
             return Ok(mapper.Map<CategoryDto>(CategoryDomain));
         }
-        [HttpGet("{id}/GetCategoryById")]
+        [HttpGet("GetCategoryById/{id}")]
         public async Task<IActionResult> GetCategoryById([FromRoute] Guid id)
         {
             var categoryDomain = await categoryRepository.GetCategoryByIdAsync(id);
@@ -71,7 +71,7 @@ namespace CodePulseAdminPortal.API.Controllers
             //};
             return Ok(mapper.Map<CategoryDto>(categoryDomain));
         }
-        [HttpPut("{id}/UpdateCategoryById")]
+        [HttpPut("UpdateCategoryById/{id}")]
         public async Task<IActionResult> UpdateCategoryById([FromRoute] Guid id, [FromBody] UpdateCategoryRequest request)
         {
             var CategoryDomain = mapper.Map<Category>(request);

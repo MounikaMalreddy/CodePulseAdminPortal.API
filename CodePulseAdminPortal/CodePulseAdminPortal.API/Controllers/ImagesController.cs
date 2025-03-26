@@ -37,7 +37,7 @@ namespace CodePulse.API.Controllers
             }
             return BadRequest(ModelState);
         }
-        [HttpGet]
+        [HttpGet("GetAllBlogImages")]
         public async Task<IActionResult> GetAllBlogImages()
         {
             var blogImageDomain = await blogImageRepository.GetBlogImagesAsync();

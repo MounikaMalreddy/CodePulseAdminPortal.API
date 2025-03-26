@@ -38,7 +38,7 @@ namespace CodePulseAdminPortal.API.Repositories.Implementation
         }
 
         public async Task<IEnumerable<Category>> GetAllCategoriesAsync(string? filterQuery = null,
-            string? sortBy=null, string? sortDirection=null, int? pageNumber = 1, int? pageSize = 5)
+            string? sortBy=null, string? sortDirection=null, int? pageNumber = 1, int? pageSize = 10)
         {
             var categories = dbContext.Category.AsQueryable();
             if (!string.IsNullOrEmpty(filterQuery))
@@ -59,7 +59,7 @@ namespace CodePulseAdminPortal.API.Repositories.Implementation
                 }
             }
             var skipResults = (pageNumber - 1) * pageSize;
-            categories = categories.Skip(skipResults ?? 0).Take(pageSize ?? 5);
+            categories = categories.Skip(skipResults ?? 0).Take(pageSize ?? 10);
             return await categories.ToListAsync();
             //return await dbContext.Category.ToListAsync();
         }

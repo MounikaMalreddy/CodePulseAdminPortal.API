@@ -4,6 +4,7 @@ using CodePulseAdminPortal.API.Mappings;
 using CodePulseAdminPortal.API.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 using CodePulseAdminPortal.API.Middleware;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
@@ -33,9 +34,20 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(options =>
+{
+    options.AllowAnyOrigin();
+    options.AllowAnyMethod();
+    options.AllowAnyHeader();
+});
 app.UseMiddleware<GlobalErrorHandlingMiddleware>();
 
 app.UseAuthorization();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
+    RequestPath = "/Images"
+});
 
 app.MapControllers();
 

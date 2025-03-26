@@ -44,7 +44,7 @@ namespace CodePulse.API.Controllers
             blogPostDomain = await blogPostRepository.AddBlogPostAsync(blogPostDomain);
             return Ok(mapper.Map<BlogPostDto>(blogPostDomain));
         }
-        [HttpGet("{id}/GetBlogPostById")]
+        [HttpGet("GetBlogPostById/{id}")]
         public async Task<IActionResult> GetBlogPostById([FromRoute] Guid id)
         {
             var blogPostDomain = await blogPostRepository.GetBlogPostByIdAsync(id);
@@ -61,7 +61,7 @@ namespace CodePulse.API.Controllers
             return Ok(mapper.Map<BlogPostDto>(blogPostDomain));
         }
 
-        [HttpPut("{id}/UpdateBlogPostById")]
+        [HttpPut("UpdateBlogPostById/{id}")]
         public async Task<IActionResult> UpdateBlogPostById([FromRoute]Guid id, [FromBody] AddBlogPostRequestDto request)
         {
             var blogPostDomain = mapper.Map<BlogPost>(request);
@@ -78,7 +78,7 @@ namespace CodePulse.API.Controllers
                 return NotFound();
             return Ok(mapper.Map<BlogPostDto>(blogPostDomain));
         }
-        [HttpDelete("{id}/DeleteBlogPost")]
+        [HttpDelete("DeleteBlogPost/{id}")]
         public async Task<IActionResult> DeleteBlogPost([FromRoute] Guid id)
         {
             var blogPostDomain = await blogPostRepository.DeleteBlogPostById(id);
